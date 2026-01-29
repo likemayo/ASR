@@ -1,0 +1,4 @@
+image_id,filename,scene_type,complexity,subjects,actions,colors,setting,structure_what,structure_who,structure_where,structure_color,structure_size,structure_mood,gold_standard
+001,image_001.png,outdoor,2,dog;child,playing with a ball,green;brown,park,a child and a dog,a boy and his pet,in a sunny park,green grass and trees,medium-sized dog,happy,A child throws a ball and plays with a dog in the park
+002,image_002.png,outdoor,1,child,holding umbrella,blue;yellow,park in rain,a child with an umbrella,a boy standing in rain,in a rainy park,blue umbrella,one child,cheerful,A child smiles while holding a blue umbrella in the rain
+003,image_003.png,outdoor,3,dog;dog;child,playing fetch,green;black;gold,park,a child and two dogs,a boy with two pets,in a sunny park,colorful flowers,two medium dogs,excited,A child plays with two dogs in a bright park

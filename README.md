@@ -92,16 +92,38 @@ Audio → Whisper (multiple candidates)
 
 ---
 
-## Timeline
+## Timeline & Phase Status
 
-| Phase | Goal | Duration | Status |
-|-------|------|----------|--------|
-| **Phase 1** | Imagery Dataset & Visual Framework | 7 weeks | ✅ Complete |
-| **Phase 2** | Audio Processing & ASR Modeling | 8 weeks | 🔄 In Progress |
-| **Phase 3** | Multimodality Development | 8 weeks | ⏳ Planned |
-| **Phase 4** | Therapy Prototype & Testing | 4 weeks | ⏳ Planned |
-| **Phase 5** | Final Testing & Reporting | 4 weeks | ⏳ Planned |
-| **Total** | Full Implementation | ~32 weeks | |
+| Phase | Objective | Duration | Status |
+|-------|-----------|----------|--------|
+| **Phase 1** | Curate 100 images with metadata | 5 weeks | 🔄 In Progress |
+| **Phase 2** | Baseline ASR & LoRA fine-tuning | 4 weeks | ⏳ Pending |
+| **Phase 3** | Multimodal integration (CLIP) | 4 weeks | ⏳ Pending |
+| **Phase 4** | Web UI & therapy scaffolding | 5 weeks | ⏳ Pending |
+| **Phase 5** | Evaluation & final report | 4 weeks | ⏳ Pending |
+
+**Total:** 32 weeks (Jan 20 - Apr 25, 2026)
+
+---
+
+## Phase 1: Image Curation
+
+**Objective:** Create a curated dataset of 100 images with complete metadata.
+
+**Quick Start:**
+```bash
+cd phase_1
+# 1. Create CSV with image metadata
+# 2. Copy CSV to this folder
+# 3. Run:
+python phase1_workflow.py --load-csv your_file.csv
+```
+
+**Outputs:**
+- `data/metadata.json` - Production metadata
+- `image_metadata_final.csv` - Review copy
+
+See [phase_1/README.md](phase_1/README.md) for detailed workflow.
 
 ---
 
@@ -155,40 +177,20 @@ print(result['text'])
 
 ```
 adi-o/
-├── phase_1/                  # Imagery dataset and visual framework
+├── phase_1/              # Image curation
 │   ├── image_curator.py
-│   ├── structure_word_mapper.py
-│   └── validation_check.py
-├── phase_2/                  # Audio processing and ASR modeling
-│   ├── audio_preprocessing.py
-│   ├── baseline_evaluation.py
-│   ├── lora_finetuning.py
-│   └── training_config.yaml
-├── phase_3/                  # Multimodal ASR development
-│   ├── clip_embeddings.py
-│   ├── multimodal_asr.py
-│   ├── fusion_tuning.py
-│   └── transcript_normalization.py
-├── phase_4/                  # Prototype and integration
-│   ├── app.py                # Main Streamlit app
-│   └── integration_tests.py
-├── modules/                  # Reusable components
-│   ├── asr.py
-│   ├── scaffolding.py
-│   ├── evaluation.py
-│   └── utils.py
+│   ├── phase1_workflow.py
+│   ├── CSV_WORKFLOW.md
+│   └── data/
+│       └── images/
+├── phase_2/              # ASR & fine-tuning (coming soon)
+├── phase_3/              # Multimodal integration (coming soon)
+├── phase_4/              # Web UI (coming soon)
 ├── data/
-│   ├── images/               # Curated image dataset
-│   ├── audio/                # Audio validation data
-│   ├── metadata.json         # Image metadata & gold standards
-│   └── embeddings.pkl        # Pre-computed CLIP embeddings
-├── models/
-│   └── whisper-lora/         # Fine-tuned Whisper model
-├── notebooks/                # Jupyter notebooks for exploration
-├── tests/                    # Unit and integration tests
+│   ├── images/           # Curated images
+│   └── metadata.json     # Complete image metadata
 ├── requirements.txt
 ├── .env.template
-├── .gitignore
 └── README.md
 ```
 
@@ -208,46 +210,28 @@ adi-o/
 
 ---
 
-## Phase Progression
+## Phase Progression Details
 
-### Phase 1: Imagery Dataset ✅
-- [x] Curate 100 high-quality images
-- [x] Tag with metadata (scene type, complexity, subjects)
-- [x] Map structure words (who, what, where, color, size, mood)
-- [x] Generate gold-standard descriptions
-- [x] Validate dataset quality
-
-**Deliverable:** `data/metadata.json` with complete image catalog
-
-### Phase 2: ASR Modeling 🔄
+### Phase 2: Audio Processing & ASR Modeling
 - [ ] Access Project Euphonia dataset
-- [ ] Preprocess audio (normalize, augment, clean)
-- [ ] Establish baseline Whisper WER
-- [ ] Fine-tune with LoRA
-- [ ] Document WER improvements
+- [ ] Preprocess audio
+- [ ] Establish baseline WER
+- [ ] Fine-tune Whisper with LoRA
 
-**Expected Progress:** 5-15% WER improvement
+### Phase 3: Multimodal Integration
+- [ ] Generate CLIP embeddings
+- [ ] Implement n-best rescoring
+- [ ] Validate improvements
 
-### Phase 3: Multimodal Integration ⏳
-- [ ] Generate CLIP image embeddings
-- [ ] Implement n-best hypothesis rescoring
-- [ ] Tune fusion coefficient (alpha)
-- [ ] Validate multimodal gains
-
-**Expected Progress:** 5-10% additional WER improvement
-
-### Phase 4: Prototype ⏳
+### Phase 4: Web UI & Scaffolding
 - [ ] Build Streamlit interface
-- [ ] Integrate all components
-- [ ] Implement scaffolding logic
+- [ ] Integrate components
 - [ ] Add evaluation module
-- [ ] Pilot testing
 
-### Phase 5: Final Evaluation ⏳
-- [ ] End-to-end testing
-- [ ] Generate results tables & visualizations
+### Phase 5: Final Evaluation
+- [ ] Complete testing
+- [ ] Generate results
 - [ ] Compile final report
-- [ ] Present findings
 
 ---
 
