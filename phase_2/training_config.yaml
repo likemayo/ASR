@@ -1,0 +1,34 @@
+model:
+  name: openai/whisper-small
+  task: transcribe
+  language: en
+
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.1
+  target_modules:
+    - q_proj
+    - v_proj
+
+training:
+  epochs: 10
+  batch_size: 8
+  learning_rate: 1.0e-4
+  warmup_steps: 500
+  fp16: true
+  eval_steps: 500
+  save_steps: 500
+  gradient_accumulation_steps: 2
+  early_stopping_patience: 3
+  metric_for_best_model: wer
+  greater_is_better: false
+
+data:
+  max_audio_length: 30
+  sampling_rate: 16000
+  dataset_path: ./data/audio/torgo/torgo_dataset
+
+output:
+  model_dir: ../models/whisper-lora-torgo
+  log_dir: ./training_logs
