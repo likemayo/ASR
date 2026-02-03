@@ -1,0 +1,27 @@
+[
+  {
+    "model": "tiny",
+    "model_id": "openai/whisper-tiny",
+    "groups": {
+      "healthy": {
+        "wer": 0.4437039635215714,
+        "cer": 0.1793179317931793,
+        "substitutions": 1141,
+        "deletions": 22,
+        "insertions": 102,
+        "num_samples": 1098
+      },
+      "dysarthria": {
+        "wer": 1.538160469667319,
+        "cer": 1.5019505851755526,
+        "substitutions": 980,
+        "deletions": 60,
+        "insertions": 1318,
+        "num_samples": 558
+      }
+    },
+    "overall_wer": 0.8264142335766423,
+    "overall_cer": 0.6367725105693982,
+    "total_samples": 1656
+  }
+]

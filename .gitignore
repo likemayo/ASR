@@ -147,3 +147,13 @@ temp_audio.wav
 *.safetensors
 *.bin
 *.onnx
+
+# Claude Code
+.claude/
+
+# Virtual environments
+.venv/
+venv/
+
+# Dataset (too large for git)
+data/
