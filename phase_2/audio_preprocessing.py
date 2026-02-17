@@ -114,14 +114,13 @@ def process_dataset(input_dir: Path, output_dir: Path, target_sr: int = 16000, d
 
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    # Load split info to know which samples are in train (for augmentation)
+    # Load split info (for reference, not used for speaker filtering since
+    # the TORGO HF dataset doesn't include individual speaker IDs)
     splits_path = input_dir / "splits.json"
-    train_speakers = set()
     if splits_path.exists():
         with open(splits_path) as f:
             split_data = json.load(f)
-            for group in split_data["splits"]["train"].values():
-                train_speakers.update(group)
+            print(f"Dataset stats: {split_data.get('stats', {})}")
 
     stats = {"processed": 0, "filtered": 0, "augmented": 0}
 
